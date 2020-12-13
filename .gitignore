@@ -1,0 +1,7 @@
+# Gradle build and internal files
+out/
+build/
+.gradle/
+
+# IntelliJ
+.idea
