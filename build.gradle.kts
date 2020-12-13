@@ -11,8 +11,6 @@ repositories {
   jcenter()
 }
 
-val junitVersion: String by project
-
 dependencies {
   implementation("io.ktor:ktor-server-netty:1.4.3")
   implementation("io.ktor:ktor-jackson:1.4.3")
@@ -22,9 +20,6 @@ dependencies {
   implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.12.0")
 
   runtimeOnly("ch.qos.logback:logback-classic:1.2.3")
-
-  testImplementation("org.junit.jupiter:junit-jupiter-api:$junitVersion")
-  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 
   jooqGenerator("org.postgresql:postgresql:42.2.14")
 }

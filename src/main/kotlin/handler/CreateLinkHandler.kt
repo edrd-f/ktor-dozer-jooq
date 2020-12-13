@@ -1,20 +1,17 @@
-package edrd.explore.handlers
+package edrd.explore.handler
 
 import edrd.explore.data.CreateLinkData
+import edrd.explore.database.Database
 import edrd.explore.util.getHasuraActionRequest
 import edrd.explore.util.json
 import edrd.explore.util.mapTo
-import edrd.explore.util.store
 import io.ktor.application.ApplicationCall
-import io.ktor.application.call
 import io.ktor.http.ContentType
 import io.ktor.response.respondText
-import io.ktor.util.pipeline.PipelineContext
-import org.jooq.DSLContext
 import org.jooq.generated.tables.records.LinksRecord
 
-class CreateLinkHandler(private val database: DSLContext) : Handler {
-  override suspend fun PipelineContext<Unit, ApplicationCall>.handle() {
+class CreateLinkHandler(private val database: Database) : Handler {
+  override suspend fun handle(call: ApplicationCall) {
     val request = getHasuraActionRequest<CreateLinkData>(call)
 
     val record = mapTo<LinksRecord>(request.input)

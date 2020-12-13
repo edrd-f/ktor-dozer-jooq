@@ -1,6 +1,7 @@
 package edrd.explore.config
 
 import edrd.explore.Server
+import edrd.explore.database.JooqDatabase
 import org.jooq.DSLContext
 import org.jooq.SQLDialect
 import org.jooq.impl.DSL
@@ -16,6 +17,6 @@ class Module(config: Config) {
   private val dslContext: DSLContext = DSL.using(dataSource, SQLDialect.POSTGRES)
 
   val server by lazy {
-    Server(database = dslContext)
+    Server(database = JooqDatabase(dslContext))
   }
 }
