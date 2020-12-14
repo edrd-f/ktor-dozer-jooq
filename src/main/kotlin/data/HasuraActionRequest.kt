@@ -9,4 +9,3 @@ data class HasuraActionRequest<InputType>(
   val input: InputType,
   val action: Action
 )
-
