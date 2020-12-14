@@ -5,4 +5,3 @@ abstract class Config {
   abstract val databaseUser: String
   abstract val databasePassword: String
 }
-
